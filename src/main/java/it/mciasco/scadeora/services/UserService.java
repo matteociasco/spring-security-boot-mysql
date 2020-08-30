@@ -1,7 +1,7 @@
-package com.mciasco.springsecurityboot.services;
+package it.mciasco.scadeora.services;
 
-import com.mciasco.springsecurityboot.domain.User;
-import com.mciasco.springsecurityboot.persistence.UserRepository;
+import it.mciasco.scadeora.domain.User;
+import it.mciasco.scadeora.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

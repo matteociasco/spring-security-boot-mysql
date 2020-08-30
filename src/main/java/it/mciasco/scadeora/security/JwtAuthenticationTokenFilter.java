@@ -1,4 +1,4 @@
-package com.mciasco.springsecurityboot.security;
+package it.mciasco.scadeora.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

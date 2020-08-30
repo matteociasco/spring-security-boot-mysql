@@ -1,4 +1,4 @@
-package com.mciasco.springsecurityboot.security;
+package it.mciasco.scadeora.security;
 
 import lombok.*;
 

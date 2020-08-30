@@ -1,4 +1,4 @@
-package com.mciasco.springsecurityboot.controllers;
+package it.mciasco.scadeora.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

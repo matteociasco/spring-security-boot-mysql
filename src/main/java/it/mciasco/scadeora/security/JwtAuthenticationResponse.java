@@ -1,6 +1,6 @@
-package com.mciasco.springsecurityboot.security;
+package it.mciasco.scadeora.security;
 
-import com.mciasco.springsecurityboot.domain.Role;
+import it.mciasco.scadeora.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -15,6 +15,6 @@ public class JwtAuthenticationResponse implements Serializable {
 
     private String username;
     private String token;
-    private List<Role> authorities;
+    private List<String> authorities;
 
 }

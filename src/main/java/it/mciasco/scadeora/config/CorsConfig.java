@@ -1,4 +1,4 @@
-package com.mciasco.springsecurityboot.config;
+package it.mciasco.scadeora.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,14 +1,15 @@
-package com.mciasco.springsecurityboot.domain;
+package it.mciasco.scadeora.domain;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Getter
 @Setter
-@Builder
+@Builder(access = AccessLevel.PUBLIC)
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -25,5 +26,9 @@ public class Role implements GrantedAuthority, Serializable {
     private Long id;
 
     private String authority;
+
+    @ManyToMany(mappedBy = "authorities", fetch = FetchType.LAZY)
+    private List<User> users;
+
 
 }

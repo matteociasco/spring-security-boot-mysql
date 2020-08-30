@@ -1,20 +1,18 @@
-package com.mciasco.springsecurityboot.security;
+package it.mciasco.scadeora.security;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mciasco.springsecurityboot.domain.Role;
-import com.mciasco.springsecurityboot.domain.User;
-import com.mciasco.springsecurityboot.persistence.UserRepository;
+import it.mciasco.scadeora.domain.Role;
+import it.mciasco.scadeora.domain.User;
+import it.mciasco.scadeora.persistence.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.net.UnknownServiceException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;

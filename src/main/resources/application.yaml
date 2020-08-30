@@ -1,0 +1,28 @@
+#server.port=9080
+
+# Configurazioni Database
+spring:
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/scadeora
+    username: sviluppo
+    password: sviluppo
+# CONFIGURAZIONE LOGGER
+logging:
+  level:
+    it:
+      mciasco:
+        scadeora: DEBUG
+    org:
+      springframework: ERROR
+
+# Configurazioni autenticazione JWT
+jwt:
+  header: X-Auth-Header
+  secret: mySecret
+  expiration: 7200 # 2 hours

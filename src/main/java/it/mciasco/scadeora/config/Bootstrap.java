@@ -1,8 +1,7 @@
-package com.mciasco.springsecurityboot.config;
+package it.mciasco.scadeora.config;
 
-import com.mciasco.springsecurityboot.domain.Role;
-import com.mciasco.springsecurityboot.persistence.RoleRepository;
-import com.mciasco.springsecurityboot.services.RoleService;
+import it.mciasco.scadeora.domain.Role;
+import it.mciasco.scadeora.services.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,15 +22,17 @@ public class Bootstrap {
                     .id(Role.ROLE_ADMIN)
                     .authority("ROLE_ADMIN")
                     .build();
+
             roleService.save(adminRole);
         }
 
         if(roleService.findByAuthority("ROLE_USER") == null){
-            Role adminRole = Role.builder()
+            Role userRole = Role.builder()
                     .id(Role.ROLE_USER)
                     .authority("ROLE_USER")
                     .build();
-            roleService.save(adminRole);
+
+            roleService.save(userRole);
         }
     }
 
