@@ -1,8 +1,6 @@
-package it.mciasco.scadeora.config;
+package it.mciasco.scadeora.security.config;
 
-import it.mciasco.scadeora.security.JwtAuthenticationEntryPoint;
-import it.mciasco.scadeora.security.JwtAuthenticationTokenFilter;
-import it.mciasco.scadeora.services.UserService;
+import it.mciasco.scadeora.security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

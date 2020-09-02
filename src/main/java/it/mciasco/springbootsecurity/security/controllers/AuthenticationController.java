@@ -1,14 +1,13 @@
-package it.mciasco.scadeora.controllers;
+package it.mciasco.scadeora.security.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import it.mciasco.scadeora.domain.Role;
-import it.mciasco.scadeora.domain.User;
-import it.mciasco.scadeora.security.JwtAuthenticationRequest;
-import it.mciasco.scadeora.security.JwtAuthenticationResponse;
-import it.mciasco.scadeora.security.JwtTokenUtil;
-import it.mciasco.scadeora.services.RoleService;
-import it.mciasco.scadeora.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import it.mciasco.scadeora.security.domain.Role;
+import it.mciasco.scadeora.security.domain.User;
+import it.mciasco.scadeora.security.dtos.JwtAuthenticationRequest;
+import it.mciasco.scadeora.security.dtos.JwtAuthenticationResponse;
+import it.mciasco.scadeora.security.services.RoleService;
+import it.mciasco.scadeora.security.services.UserService;
+import it.mciasco.scadeora.security.utils.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,11 +18,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,14 +34,22 @@ public class AuthenticationController {
 
     @Value("${jwt.header}") private String tokenHeader;
 
-    @Autowired private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired private JwtTokenUtil jwtTokenUtil;
+    private final JwtTokenUtil jwtTokenUtil;
 
-    @Autowired PasswordEncoder passwordEncoder;
+    final PasswordEncoder passwordEncoder;
 
-    @Autowired UserService userService;
-    @Autowired RoleService roleService;
+    final UserService userService;
+    final RoleService roleService;
+
+    public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenUtil jwtTokenUtil, PasswordEncoder passwordEncoder, UserService userService, RoleService roleService) {
+        this.authenticationManager = authenticationManager;
+        this.jwtTokenUtil = jwtTokenUtil;
+        this.passwordEncoder = passwordEncoder;
+        this.userService = userService;
+        this.roleService = roleService;
+    }
 
     @PostMapping(value = "auth/login")
     public ResponseEntity<?> login(

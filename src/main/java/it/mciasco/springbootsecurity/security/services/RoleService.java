@@ -1,7 +1,7 @@
-package it.mciasco.scadeora.services;
+package it.mciasco.scadeora.security.services;
 
-import it.mciasco.scadeora.domain.Role;
-import it.mciasco.scadeora.persistence.RoleRepository;
+import it.mciasco.scadeora.security.domain.Role;
+import it.mciasco.scadeora.security.persistence.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

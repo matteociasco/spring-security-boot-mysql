@@ -1,7 +1,7 @@
-package it.mciasco.scadeora.persistence;
+package it.mciasco.scadeora.security.persistence;
 
 
-import it.mciasco.scadeora.domain.User;
+import it.mciasco.scadeora.security.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

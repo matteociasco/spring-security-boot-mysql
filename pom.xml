@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.mciasco</groupId>
-    <artifactId>scadeora-service</artifactId>
+    <artifactId>springbootsecurity</artifactId>
     <version>0.0.1</version>
-    <name>scadeora-service</name>
+    <name>spring-boot-security</name>
     <description>Template project for Spring Boot and Spring Security</description>
 
     <properties>

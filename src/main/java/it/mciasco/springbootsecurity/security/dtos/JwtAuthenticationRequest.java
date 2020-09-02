@@ -1,4 +1,4 @@
-package it.mciasco.scadeora.security;
+package it.mciasco.scadeora.security.dtos;
 
 import lombok.*;
 

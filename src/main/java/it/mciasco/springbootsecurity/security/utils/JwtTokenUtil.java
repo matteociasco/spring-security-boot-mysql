@@ -1,14 +1,13 @@
-package it.mciasco.scadeora.security;
+package it.mciasco.scadeora.security.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import it.mciasco.scadeora.domain.Role;
-import it.mciasco.scadeora.domain.User;
-import it.mciasco.scadeora.persistence.UserRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
+import it.mciasco.scadeora.security.domain.Role;
+import it.mciasco.scadeora.security.domain.User;
+import it.mciasco.scadeora.security.persistence.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -33,17 +32,20 @@ public class JwtTokenUtil {
     private static final String AUDIENCE_MOBILE = "mobile";
     private static final String AUDIENCE_TABLET = "tablet";
 
-    @Value("${jwt.secret}")
-    private String secret;
+    final ObjectMapper objectMapper;
 
-    @Autowired
-    ObjectMapper objectMapper;
+    final UserRepository userRepository;
 
     @Value("${jwt.expiration}")
     private Long expiration;
 
-    @Autowired
-    UserRepository userRepository;
+    @Value("${jwt.secret}")
+    private String secret;
+
+    public JwtTokenUtil(ObjectMapper objectMapper, UserRepository userRepository) {
+        this.objectMapper = objectMapper;
+        this.userRepository = userRepository;
+    }
 
     public String getUsernameFromToken(String token) {
         String username;

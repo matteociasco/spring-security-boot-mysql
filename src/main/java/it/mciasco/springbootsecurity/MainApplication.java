@@ -1,13 +1,13 @@
-package it.mciasco.scadeora;
+package it.mciasco.springbootsecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScadeoraApplication {
+public class MainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ScadeoraApplication.class, args);
+        SpringApplication.run(MainApplication.class, args);
     }
 
 }

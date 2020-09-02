@@ -1,4 +1,4 @@
-package it.mciasco.scadeora.domain;
+package it.mciasco.scadeora.security.domain;
 
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

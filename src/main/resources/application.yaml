@@ -1,6 +1,6 @@
 #server.port=9080
 
-# Configurazioni Database
+# CONFIGURAZIONI DATABASE
 spring:
   jpa:
     generate-ddl: true
@@ -17,11 +17,11 @@ logging:
   level:
     it:
       mciasco:
-        scadeora: DEBUG
+        springbootsecurity: DEBUG
     org:
       springframework: ERROR
 
-# Configurazioni autenticazione JWT
+# CONFIGURAZIONI AUTENTICAZIONE JWT
 jwt:
   header: X-Auth-Header
   secret: mySecret

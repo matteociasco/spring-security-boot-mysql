@@ -1,6 +1,6 @@
-package it.mciasco.scadeora.persistence;
+package it.mciasco.scadeora.security.persistence;
 
-import it.mciasco.scadeora.domain.Role;
+import it.mciasco.scadeora.security.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {

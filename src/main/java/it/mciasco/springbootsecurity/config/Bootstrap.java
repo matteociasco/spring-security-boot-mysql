@@ -1,7 +1,7 @@
 package it.mciasco.scadeora.config;
 
-import it.mciasco.scadeora.domain.Role;
-import it.mciasco.scadeora.services.RoleService;
+import it.mciasco.scadeora.security.domain.Role;
+import it.mciasco.scadeora.security.services.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
